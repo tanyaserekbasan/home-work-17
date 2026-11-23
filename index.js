@@ -9,15 +9,23 @@ if (billInput === null || tipInput === null) {
   console.log(typeof bill);
   console.log(typeof tip);
 
-  if (bill <= 0 || tip < 0 || tip > 100) {
+  if (
+    Number.isNaN(bill) ||
+    Number.isNaN(tip) ||
+    bill <= 0 ||
+    tip < 0 ||
+    tip > 100
+  ) {
     alert("Invalid input data");
   } else {
     const tipAmount = (bill * tip) / 100;
     const totalSum = bill + tipAmount;
 
-    alert(`Check sum: ${bill}`);
-    alert(`Tip: ${tip}%`);
-    alert(`Tip amount: ${tipAmount}`);
-    alert(`Total sum to pay: ${totalSum}`);
+    alert(
+      `Check sum: ${bill}\n` +
+        `Tip: ${tip}%\n` +
+        `Tip amount: ${tipAmount.toFixed(2)}\n` +
+        `Total sum to pay: ${totalSum.toFixed(2)}`,
+    );
   }
 }
