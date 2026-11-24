@@ -1,13 +1,10 @@
 const billInput = prompt("Enter the check sum:");
 const tipInput = prompt("Enter the tip percentage:");
 
-if (
-  billInput === null ||
-  tipInput === null ||
-  billInput.trim() === "" ||
-  tipInput.trim() === ""
-) {
+if (billInput === null || tipInput === null) {
   alert("Canceled.");
+} else if (billInput.trim() === "" || tipInput.trim() === "") {
+  alert("Invalid input data");
 } else {
   const bill = Number(billInput);
   const tip = Number(tipInput);
